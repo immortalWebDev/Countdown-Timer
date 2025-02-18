@@ -13,6 +13,15 @@ const updateCountdown = (deadline) => {
   const currentTime = new Date();
   const timeDiff = deadline - currentTime;
 
+  if(timeDiff <=0 )
+  {
+    days.textContent = "00"
+    hours.textContent = "00"
+    mins.textContent = "00"
+    secs.textContent = "00"
+    return
+  }
+
   // console.log(timeDiff)
   let calSec = Math.floor(timeDiff / 1000) % 60;
   let calMin = Math.floor(timeDiff / 1000 / 60) % 60;
